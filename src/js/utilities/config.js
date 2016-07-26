@@ -13,7 +13,8 @@ function config ($stateProvider, $urlRouterProvider) {
     })
     .state('root.addProduct', {
       url: '/add-product',
-      templateUrl: 'templates/add-product.tpl.html'
+      templateUrl: 'templates/add-product.tpl.html',
+      controller: 'AddController as vm'
     })
 
     // States pertaining to users
@@ -21,6 +22,11 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/register',
       templateUrl: 'templates/register.tpl.html',
       controller: 'RegisterController as vm'
+    })
+    .state('root.login', {
+      url: '/login',
+      templateUrl: 'templates/login.tpl.html',
+      controller: 'LoginController as vm'
     })
 
   $urlRouterProvider.otherwise('/');
