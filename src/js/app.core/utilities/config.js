@@ -3,18 +3,25 @@ function config ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('root', {
       abstract: true,
-      templateUrl: 'templates/layout.tpl.html'
+      templateUrl: 'templates/layout.tpl.html',
+      controller: 'LayoutController as vm'
     })
 
     // States pertaining to the store
     .state('root.home', {
       url: '/',
-      templateUrl: 'templates/home.tpl.html'
+      templateUrl: 'templates/home.tpl.html',
+      controller: 'ListController as vm'
     })
     .state('root.addProduct', {
       url: '/add-product',
       templateUrl: 'templates/add-product.tpl.html',
       controller: 'AddController as vm'
+    })
+    .state('root.cart', {
+      url: '/cart',
+      templateUrl: 'templates/cart.tpl.html',
+      controller: 'CartController as vm'
     })
 
     // States pertaining to users
